@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inclusive+Sans&display=swap" rel="stylesheet">
+
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+
+    <title>FileSum</title>
+</head>
+<body>
+    <div class="outer-wrapper">
+        <div class="white-card">
+            <div class="inner-div">
+                <!-- Step One -->
+                <div>
+                    <div class="step-title">
+                        Step 1
+                    </div>
+                    <p>Select your checksum algorithm. <br> (You can verify from where you downloaded the file)</p>
+
+                    <div class="container">
+                        <div style="margin: auto;">
+                            <div class="radio-tiles">
+                                <label>
+                                  <input autocomplete="off" type="radio" name="tile" value="SHA-1">
+                                  <div class="tile">SHA-1</div>
+                                </label>
+                                <label>
+                                  <input autocomplete="off" type="radio" name="tile" value="SHA-256">
+                                  <div class="tile">SHA-256</div>
+                                </label>
+                                <label>
+                                  <input autocomplete="off" type="radio" name="tile" value="SHA-384">
+                                  <div class="tile">SHA-384</div>
+                                </label>
+                                <label>
+                                  <input autocomplete="off" type="radio" name="tile" value="SHA-512">
+                                  <div class="tile">SHA-512</div>
+                                </label>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+
+                <!-- Step Two -->
+                <div>
+                    <div class="step-title">
+                        Step 2
+                    </div>
+                    <p>Enter the required data.</p>
+                    
+                    <form id="checksumForm">
+                        <div class="container">
+                            <h4>Enter the checksum provided by the website.</h4>
+                            <div class="form-group">
+                                <input autocomplete="off" type="text" id="inputChecksum" placeholder="Checksum value here" required>
+                            </div>
+                            
+                            <h4>Select your downloaded file.</h4>
+                            <div class="form-group">
+                                <input autocomplete="off" type="file" id="fileInput" required>
+                            </div>
+                        </div>
+
+                        <div class="step-title">
+                            Step 3
+                        </div>
+                        <p>Let's see if the checksums match!</p>
+                        <div class="form-group">
+                            <input autocomplete="off" type="submit" value="Check!">
+                        </div>
+                        
+                    </form>
+                </div>
+
+                <p id="result"></p>
+            </div>
+        </div>
+        <div class="blue-card">
+            <div class="inner-div">
+                <h1>FileSum</h1>
+                <h4>Now that's a file-sum website...</h4>
+                <hr>
+                
+                <h2>What is FileSum?</h2>
+                <p>I know you've always seen those checksums when downloading any files or software online, and wondered, "What's this for?"</p>
+                <p>Well, turns out it's a pretty handy thing. You can use it to check the integrity of your downloaded files. However there's a catch, there's always a catch isn't there. Except this one's really not a catch. It's just that the process to verify checksum is a bit involved and not very beginner-friendly. You can do it using the following options:</p>
+                <ul>
+                    <li>Be a chad and use command-line tools to first calculate the checksum of the downloaded file, then use another tool to compare the two checksums.</li>
+                    <li>Download and install an application that can do the both for you.</li>
+                    <li style="font-weight: bold;">Use this website!</li>
+                </ul>
+
+                <h2>How to use it?</h2>
+                <p>It's way easier than other methods. Just follow the three-step process on the left, and find out the integrity of your file.</p>
+                <p>P.S. One of these three steps is just clicking the "Check" button..</p>
+            </div>
+            <div class="inner-div" style="position: absolute; bottom: 0;">
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
